@@ -20,7 +20,7 @@ LICENSE=	BSD
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
-MAN1=	vee.1 veels.1 veecat.1 vee-reindex.1
+MAN1=	vee.1 veels.1 veecat.1 vee-rebuild.1
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|^function ([[:graph:]]+)|\1 ()|' ${WRKSRC}/bin/${PORTNAME}
@@ -32,7 +32,7 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/man/veels.1 ${MAN1PREFIX}/man/man1/veels.1
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/veecat ${PREFIX}/bin/veecat
 	@${INSTALL_MAN} ${WRKSRC}/man/veecat.1 ${MAN1PREFIX}/man/man1/veecat.1
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/vee-reindex ${PREFIX}/bin/vee-reindex
-	@${INSTALL_MAN} ${WRKSRC}/man/vee-reindex.1 ${MAN1PREFIX}/man/man1/vee-reindex.1
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/vee-rebuild ${PREFIX}/bin/vee-rebuild
+	@${INSTALL_MAN} ${WRKSRC}/man/vee-rebuild.1 ${MAN1PREFIX}/man/man1/vee-rebuild.1
 
 .include <bsd.port.mk>
